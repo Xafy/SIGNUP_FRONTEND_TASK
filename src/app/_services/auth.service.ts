@@ -8,16 +8,6 @@ const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
-interface AuthResponseData {
-  firstName : string,
-  lastName : string,
-  phoneNumber : string,
-  email : string,
-  password : string, //remember to hash it
-  agreement : boolean,
-  verifyBy : string
-}
-
 @Injectable({providedIn: 'root'})
 export class AuthService {
 
@@ -38,19 +28,16 @@ export class AuthService {
       httpOptions
     );
   }
-  
-  login(email: string, password: string): Observable<any> {
+
+  socialSignup(firstName: string, lastName: string, email: string): Observable<any> {
     return this.http.post(
-      AUTH_API + 'signin',
+      AUTH_API + 'social',
       {
+        firstName,
+        lastName,
         email,
-        password,
-      },
-      httpOptions
+      }
     );
   }
 
-  logout(): Observable<any> {
-    return this.http.post(AUTH_API + 'signout', { }, httpOptions);
-  }
 }
