@@ -1,0 +1,251 @@
+.box{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center;
+    justify-content: center; */
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    color: aliceblue;
+}
+
+.signup-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+h1{
+    font-size : 20px;
+    margin-bottom: 2px ;
+}
+
+h4{
+    color: rgb(214, 207, 207);
+    font-size: smaller;
+}
+
+.form-control{
+    display: flex;
+    flex-direction: column;
+}
+
+#name-input{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#name-input input{
+    width: 47%;
+}
+
+#phone-input {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+#phone-input select{
+    border-radius: 50px;
+    width: 12%;
+    height: 40px;
+    margin-bottom: 5px;
+    background-color: rgba(167, 167, 167, 0.8);
+    border: 1px solid rgb(224, 221, 221);
+    color: aliceblue;
+    font-family: Almarai;
+}
+
+#phone-input input[type="tel"]{
+    width: 33%;
+}
+
+#phone-input input[type="email"]{
+    width: 47%;
+}
+
+#password-input {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    border-radius: 50px;
+    border: 1px solid rgb(224, 221, 221);
+    height: 30px;
+    margin-bottom: 12px;
+    background-color: rgba(167, 167, 167, 0.8);
+    color: aliceblue;
+    padding : 5px ;
+}
+
+input::placeholder {
+    color: aliceblue;
+    font-family: Almarai;
+}
+
+
+#options input{
+    appearance: none;
+    -webkit-appearance: none;
+
+    border-radius: 50%;
+
+    background: #9f9fa8b7;
+
+    border: 1px solid #FFF;
+
+    height: 25px;
+    width: 25px;  
+
+    margin-left: 5px;
+}
+
+
+#options input:hover{
+    background: #0b9612d3;
+}
+
+#options input:checked{
+    background: #029609d3;
+    box-shadow: 0 0 0 3px #029609d3;
+    border: 4px solid rgb(211, 207, 207);
+}
+
+.align-radio {
+    display: flex;
+}
+
+.align-radio label{
+    display: block;
+    height: 25px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.align-radio span{
+    display: block;
+    height: 25px;
+    margin-top: 5px;
+    margin-left: 15px;
+}
+
+.align-radio-small{
+    display: flex;
+    font-size: smaller;
+}
+
+.align-radio-small label{
+    display: block;
+    height: 25px;
+    margin-top: 5px;
+    margin-left: 5px;
+    color: rgb(233, 161, 6);
+}
+
+.align-radio-small span{
+    display: block;
+    height: 25px;
+    margin-top: 5px;
+    margin-left: 15px;
+}
+
+.align-radio-small input{
+    display: block;
+    height: 15px !important;
+    width: 15px !important;
+}
+
+button {
+    width: 25%;
+    height: 40px;
+    border-radius: 50px;
+    align-self: center;
+    margin-top: 10px;
+    font-family: Almarai;
+    color: #FFF;
+    background-color: rgb(29, 167, 121);
+}
+
+#login{
+    display: flex;
+    text-align: center;
+}
+#login p{
+    
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+}
+
+.oAuth{
+    margin-top: 20px;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.oAuth p{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.oAuth img{
+    width: 40px;
+    border-radius: 50px;
+    margin-left: 10px;
+    display: inline;
+    cursor: pointer;
+}
+
+
+a{
+    color: rgb(233, 161, 6);
+}
+
+google-signin-button{
+    display: inline-block;
+    width: 50px;
+}
+
+@media only screen and (max-width: 720px) {
+#name-input{
+    flex-direction: column;
+}
+#name-input input{
+    width: 100%;
+}
+
+#phone-input {
+    flex-direction: column ;
+}
+
+#phone-input select{
+    border-radius: 50px;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+    background-color: rgba(128, 128, 128, 0.7);
+    border: 1px solid rgb(224, 221, 221);
+    color: aliceblue;
+    font-family: Almarai;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#phone-input input[type="tel"]{
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#phone-input input[type="email"]{
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+}
