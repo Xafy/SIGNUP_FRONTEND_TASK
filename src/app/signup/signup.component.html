@@ -1,4 +1,4 @@
-<div class="box center">
+<div class="box center" *ngIf="!signedUp">
 
     <div class="signup-header">
         <h1>تسجيل جديد</h1>
@@ -14,7 +14,8 @@
 
         <div id="phone-input">
             <!-- Country names and Phone Code -->
-            <select class="phone-select" id="phone" name="countryCode" title="countryCode" ngModel required>
+            <select class="phone-select" id="phone" name="countryCode" title="countryCode"
+            ngModel required>
             <option value="">رمز البلد</option>
             <option value="93">Afghanistan +93</option>
             <option value="358">Aland Islands +358</option>
@@ -291,7 +292,7 @@
             </div>
         </div>
 
-        <button type="submit" [disabled]="!authForm.valid"> <i class="fa-solid fa-dove" style="color: #ffffff;"></i> تسجيل</button>
+        <button type="submit"> <i class="fa-solid fa-dove" style="color: #ffffff;"></i> تسجيل</button>
     </form>
 
     <div id="login">
@@ -304,10 +305,12 @@
         <p>أو التسجيل عبر</p>
             <img src="https://seeklogo.com/images/T/twitter-icon-square-logo-108D17D373-seeklogo.com.png" alt="">
             <img (click)="loginWithFacebook()" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Facebook_logo_%28square%29.png/900px-Facebook_logo_%28square%29.png?20140103173026" alt="">
-            <google-signin-button [selectable]="!loggedIn"></google-signin-button>
-            <!-- <img src="https://icon-library.com/images/google-plus-icon-square/google-plus-icon-square-19.jpg" alt=""> -->
+            <google-signin-button [selectable]="!signedUp"></google-signin-button>
             <img src="https://i.pinimg.com/564x/b0/d2/6e/b0d26e8122dffa8a51081f7f814581d7.jpg" alt="">        
     </div>
 
 </div>
 
+<div *ngIf = "signedUp" class="signed-up" >
+    <p>Successfully Signed Up</p>
+</div>

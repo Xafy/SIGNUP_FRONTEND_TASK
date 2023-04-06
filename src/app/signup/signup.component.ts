@@ -12,9 +12,7 @@ import { FacebookLoginProvider } from "@abacritt/angularx-social-login";
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  isSuccessful = false;
-  isSignUpFailed = false;
-  loggedIn = false;
+  signedUp = false;
   user :  SocialUser = new SocialUser;
   errorMessage = "";
 
@@ -27,7 +25,6 @@ export class SignupComponent implements OnInit {
   ngOnInit() {
     this.socialAuthService.authState.subscribe((user) => {
       this.user = user;
-      console.log(this.user.email, this.user.lastName)
       this.authService.socialSignup(
             this.user.firstName,
             this.user.lastName,
@@ -36,17 +33,15 @@ export class SignupComponent implements OnInit {
               {
                 next: data => {
                   console.log(data);
-                  // this.storageService.saveUser(data.token);
-                  this.isSuccessful = true;
-                  this.isSignUpFailed = false;
+                  this.storageService.saveUser(data.token);
+                  this.signedUp = true
                 },
                 error: err => {
                   this.errorMessage = err.error.message;
-                  this.isSignUpFailed = true;
                 }
               }
             )
-      this.loggedIn = (user != null);
+      this.signedUp = (user != null);
     });
   }
 
@@ -58,12 +53,10 @@ export class SignupComponent implements OnInit {
       next: data => {
         console.log(data);
         this.storageService.saveUser(data.token);
-        this.isSuccessful = true;
-        this.isSignUpFailed = false;
+        this.signedUp = true
       },
       error: err => {
         this.errorMessage = err.error.message;
-        this.isSignUpFailed = true;
       }
     });
   }

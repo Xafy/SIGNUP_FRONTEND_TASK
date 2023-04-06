@@ -83,6 +83,14 @@ input {
     padding : 5px ;
 }
 
+input.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+
+input.ng-valid.ng-touched{
+    border: 1px solid green;
+}
+
 input::placeholder {
     color: aliceblue;
     font-family: Almarai;
@@ -248,4 +256,15 @@ google-signin-button{
     margin-left: 0;
     margin-right: 0;
 }
+}
+
+.signed-up{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Almarai;
+    font-size: larger;
+    color: #FFF;
+    background-color: cadetblue;
+    text-align: center;
 }
